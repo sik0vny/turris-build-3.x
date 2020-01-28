@@ -1,0 +1,26 @@
+From f68c9b7e17e36baef5bc00eb7760c14958482e57 Mon Sep 17 00:00:00 2001
+From: Josef Schlehofer <pepe.schlehofer@gmail.com>
+Date: Tue, 28 Jan 2020 09:39:56 +0100
+Subject: [PATCH] dnsdist: add to CONFIGURE_ARGS --with-pic
+
+Let's see if it helps:
+https://github.com/openwrt/packages/issues/11148
+---
+ net/dnsdist/Makefile | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/net/dnsdist/Makefile b/net/dnsdist/Makefile
+index 0c0f13ee8..8a65dc4b4 100644
+--- a/net/dnsdist/Makefile
++++ b/net/dnsdist/Makefile
+@@ -67,6 +67,7 @@ CONFIGURE_ARGS+= \
+ 	--enable-libsodium \
+ 	--enable-protobuf \
+ 	--enable-re2 \
++	--with-pic \
+ 	--with-lua=lua \
+ 	--with-net-snmp \
+         $(if $(CONFIG_DNSDIST_GNUTLS),--enable,--disable)-gnutls \
+-- 
+2.25.0
+
