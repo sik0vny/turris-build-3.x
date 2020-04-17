@@ -493,17 +493,6 @@ prepare_tools() {
 	compile_target
 }
 
-available_commands+=( ["repo_prepare"]="Same as prepare but instead of checkout uses repo_checkout" )
-repo_prepare() {
-	repo_checkout
-	clean
-	patch_openwrt
-	repatch_feeds
-	gen_version
-	configure
-	set_ccache
-}
-
 available_commands+=( ["autopkg"]="	Deploy autopkg scripts that can be used for rolling software development" )
 autopkg() {
 	report "Deploying autopkg scripts"
@@ -528,7 +517,7 @@ print_help() {
 	echo "	-h, --help	Show this help text"
 	echo
 	echo "Advanced options:"
-	echo "	-p BRANCH	Name of the target build alias. This is used to set OPKG feeds and for repo_checkout. If not specified '$PUBLISH_BRANCH' is used."
+	echo "	-p BRANCH	Name of the target build alias. This is used to set OPKG feeds. If not specified '$PUBLISH_BRANCH' is used."
 	echo "	-l		Do not update local git mirrors. Use them as they are to fetch OpenWRT and its feeds."
 	echo "	-d		Do not use shallow checkouts"
 	echo "	-x		Enable debug mode"
