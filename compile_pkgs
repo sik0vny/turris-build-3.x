@@ -60,9 +60,9 @@ set_target() {
 # Get OpenWRT URL and branch from feeds.conf file
 openwrt_feed() {
 	# OpenWRT git repository URL
-	OPENWRT_URL="https://github.com/openwrt/chaos_calmer.git"
+	OPENWRT_URL="https://gitlab.labs.nic.cz/turris/openwrt.git"
 	# Git reference used to checkout OpenWRT repository
-	OPENWRT_BRANCH="f7fbc745a150335783402b21425bc3b9ab2ffc4a"
+	OPENWRT_BRANCH="1b46660754f029ccd8cecaebd9ecb26758dfed9a"
 }
 
 # Configuration variables
